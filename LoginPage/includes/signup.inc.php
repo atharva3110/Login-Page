@@ -10,7 +10,7 @@ if (isset($_POST['signup-submit'])) {
 
 	// ERROR HANDLERS
 	if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat)) {
-		header("Location: ../signup.php?error=emptyfield&uid=".$username."&mail=".$email);
+		header("Location: ../signup.php?error=emptyfields&uid=".$username."&mail=".$email);
 		exit();		# Empty field(s) error handler
 	}
 	else if (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)) {
